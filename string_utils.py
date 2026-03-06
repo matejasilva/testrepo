@@ -19,9 +19,15 @@ def reverse_words(text: str) -> str:
     return " ".join(reversed(text.split()))
 
 
+def capitalize_words(text: str) -> str:
+    """Convert each word to title case (first letter uppercase)."""
+    return text.title()
+
+
 if __name__ == "__main__":
     sample = "The quick brown fox jumps over the lazy dog"
     print("Original:", sample)
     print("Truncated:", truncate(sample, 20))
     print("Word count:", word_count(sample))
     print("Reversed words:", reverse_words(sample))
+    print("Title case:", capitalize_words(sample.lower()))

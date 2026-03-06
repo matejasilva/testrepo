@@ -42,6 +42,11 @@ def drop(lst: list, n: int) -> list:
     return lst[n:]
 
 
+def last(lst: list, n: int = 1) -> list:
+    """Get the last n elements from a list."""
+    return lst[-n:] if n else []
+
+
 if __name__ == "__main__":
     data = [1, 2, [3, 4], 5, [6, 7]]
     nums = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -52,3 +57,4 @@ if __name__ == "__main__":
     print("Rotate:", rotate([1, 2, 3, 4, 5], 2))
     print("Take 3:", take(nums, 3))
     print("Drop 2:", drop(nums, 2))
+    print("Last 2:", last(nums, 2))

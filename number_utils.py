@@ -4,6 +4,8 @@
 
 def clamp(n: float, low: float, high: float) -> float:
     """Clamp n to the range [low, high]."""
+    if low > high:
+        raise ValueError("low must be less than or equal to high")
     return max(low, min(high, n))
 
 

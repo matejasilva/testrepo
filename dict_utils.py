@@ -20,3 +20,15 @@ def merge(*dicts: dict) -> dict:
     for d in dicts:
         result.update(d)
     return result
+
+
+def pick(d: dict, keys: list) -> dict:
+    """Return dict with only the specified keys."""
+    return {k: d[k] for k in keys if k in d}
+
+
+if __name__ == "__main__":
+    print("Invert:", invert({"a": 1, "b": 2}))
+    print("Nested:", get_nested({"a": {"b": {"c": 42}}}, "a.b.c"))
+    print("Merge:", merge({"x": 1}, {"y": 2}, {"x": 99}))
+    print("Pick:", pick({"a": 1, "b": 2, "c": 3}, ["a", "c"]))

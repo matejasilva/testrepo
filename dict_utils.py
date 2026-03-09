@@ -12,3 +12,11 @@ def get_nested(d: dict, path: str, sep: str = ".") -> object:
     for key in path.split(sep):
         d = d[key]
     return d
+
+
+def merge(*dicts: dict) -> dict:
+    """Merge multiple dicts. Later dicts override earlier ones."""
+    result = {}
+    for d in dicts:
+        result.update(d)
+    return result

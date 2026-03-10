@@ -28,3 +28,8 @@ def reverse_words(s: str) -> str:
 def capitalize_words(s: str) -> str:
     """Return s with the first letter of each word capitalized."""
     return s.title()
+
+
+def strip_extra_spaces(s: str) -> str:
+    """Collapse runs of whitespace to a single space and strip leading/trailing whitespace."""
+    return " ".join(s.split())

@@ -23,3 +23,8 @@ def word_count(s: str) -> int:
 def reverse_words(s: str) -> str:
     """Return s with the order of words reversed."""
     return " ".join(reversed(s.split()))
+
+
+def capitalize_words(s: str) -> str:
+    """Return s with the first letter of each word capitalized."""
+    return s.title()

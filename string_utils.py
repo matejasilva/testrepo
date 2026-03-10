@@ -18,3 +18,8 @@ def is_palindrome(s: str) -> bool:
 def word_count(s: str) -> int:
     """Return the number of words in s (split on whitespace)."""
     return len(s.split())
+
+
+def reverse_words(s: str) -> str:
+    """Return s with the order of words reversed."""
+    return " ".join(reversed(s.split()))

@@ -13,8 +13,8 @@ _TIME_UNITS = {
 def parse_duration(duration: str) -> float:
     """
     Parse duration string like:
-    "1h 30m 15s" or "500ms"
-    into total seconds (float to support milliseconds).
+    "1h 30m 15s", "500ms", or "1.5h"
+    into total seconds (float to support milliseconds and decimals).
     """
     if not duration or not isinstance(duration, str):
         raise DurationFormatError("Invalid duration format")
@@ -41,10 +41,14 @@ def parse_duration(duration: str) -> float:
         if unit in seen_units:
             raise DurationFormatError(f"Duplicate unit: {unit}")
 
-        if not value_part.isdigit():
+        try:
+            value = float(value_part)
+        except ValueError:
             raise DurationFormatError("Invalid numeric value")
+        if value < 0:
+            raise DurationFormatError("Duration values must be non-negative")
 
-        total_seconds += int(value_part) * _TIME_UNITS[unit]
+        total_seconds += value * _TIME_UNITS[unit]
         seen_units.add(unit)
 
     return total_seconds
@@ -71,3 +75,12 @@ def format_duration(seconds: int | float) -> str:
             remaining -= value * multiplier
 
     return " ".join(parts)
+
+
+def add_durations(*durations: str) -> str:
+    """
+    Add multiple duration strings and return the combined duration.
+    Example: add_durations("1h", "30m", "15s") -> "1h 30m 15s"
+    """
+    total = sum(parse_duration(d) for d in durations)
+    return format_duration(total)

@@ -64,3 +64,14 @@ def format_duration(seconds: int) -> str:
             seconds -= value * multiplier
 
     return " ".join(parts)
+
+
+def multiply_duration(duration: str, factor: int | float) -> str:
+    """
+    Multiply a duration by a factor.
+    Example: multiply_duration("1h 30m", 2) -> "3h 0m"
+    """
+    if factor < 0:
+        raise DurationFormatError("Factor must be non-negative")
+    seconds = parse_duration(duration) * factor
+    return format_duration(int(seconds))

@@ -6,28 +6,34 @@ _TIME_UNITS = {
     "h": 3600,
     "m": 60,
     "s": 1,
+    "ms": 0.001,
 }
 
 
-def parse_duration(duration: str) -> int:
+def parse_duration(duration: str) -> float:
     """
     Parse duration string like:
-    "1h 30m 15s"
-    into total seconds.
+    "1h 30m 15s" or "500ms"
+    into total seconds (float to support milliseconds).
     """
     if not duration or not isinstance(duration, str):
         raise DurationFormatError("Invalid duration format")
 
     parts = duration.strip().split()
-    total_seconds = 0
+    total_seconds = 0.0
     seen_units = set()
 
     for part in parts:
         if len(part) < 2:
             raise DurationFormatError("Invalid duration segment")
 
-        value_part = part[:-1]
-        unit = part[-1]
+        # Check for "ms" (2-char unit) before single-char units
+        if part.endswith("ms") and len(part) > 2:
+            value_part = part[:-2]
+            unit = "ms"
+        else:
+            value_part = part[:-1]
+            unit = part[-1]
 
         if unit not in _TIME_UNITS:
             raise DurationFormatError(f"Invalid time unit: {unit}")
@@ -44,23 +50,24 @@ def parse_duration(duration: str) -> int:
     return total_seconds
 
 
-def format_duration(seconds: int) -> str:
+def format_duration(seconds: int | float) -> str:
     """
     Convert seconds into formatted duration string.
-    Example: 5400 -> "1h 30m"
+    Example: 5400 -> "1h 30m", 1.5 -> "1s 500ms"
     """
-    if not isinstance(seconds, int) or seconds < 0:
-        raise DurationFormatError("Seconds must be non-negative integer")
+    if not isinstance(seconds, (int, float)) or seconds < 0:
+        raise DurationFormatError("Seconds must be non-negative number")
 
     if seconds == 0:
         return "0s"
 
     parts = []
+    remaining = float(seconds)
 
     for unit, multiplier in _TIME_UNITS.items():
-        value = seconds // multiplier
+        value = int(remaining / multiplier)
         if value > 0:
             parts.append(f"{value}{unit}")
-            seconds -= value * multiplier
+            remaining -= value * multiplier
 
     return " ".join(parts)

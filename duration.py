@@ -64,3 +64,16 @@ def format_duration(seconds: int) -> str:
             seconds -= value * multiplier
 
     return " ".join(parts)
+
+
+def subtract_durations(minuend: str, subtrahend: str) -> str:
+    """
+    Subtract one duration from another.
+    Example: subtract_durations("2h 30m", "1h 15m") -> "1h 15m"
+    Raises DurationFormatError if result would be negative.
+    """
+    a = parse_duration(minuend)
+    b = parse_duration(subtrahend)
+    if a < b:
+        raise DurationFormatError("Result would be negative")
+    return format_duration(int(a - b))

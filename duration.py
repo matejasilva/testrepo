@@ -8,6 +8,9 @@ _TIME_UNITS = {
     "s": 1,
 }
 
+def test_parse_duration_valid(input_str, expected):
+    assert parse_duration(input_str) == expected
+    pass
 
 def parse_duration(duration: str) -> int:
     """

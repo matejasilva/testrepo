@@ -75,3 +75,12 @@ def multiply_duration(duration: str, factor: int | float) -> str:
         raise DurationFormatError("Factor must be non-negative")
     seconds = parse_duration(duration) * factor
     return format_duration(int(seconds))
+
+
+def add_durations(a: str, b: str) -> str:
+    """
+    Sum two duration strings.
+    Example: add_durations("1h 30m", "45m") -> "2h 15m"
+    """
+    total = parse_duration(a) + parse_duration(b)
+    return format_duration(total)

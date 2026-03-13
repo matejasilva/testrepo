@@ -71,6 +71,7 @@ from .duration import (
     parse_duration,
     format_duration,
     multiply_duration,
+    add_durations,
     DurationFormatError,
 )
 
@@ -136,6 +137,7 @@ __all__ = [
     "parse_duration",
     "format_duration",
     "multiply_duration",
+    "add_durations",
     "DurationFormatError",
     # Validation
     "is_valid_email",

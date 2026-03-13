@@ -1,5 +1,5 @@
 import pytest
-from math_utils import is_prime
+from utils.math_utils import is_prime
 
 
 def test_small_primes():

@@ -7,8 +7,12 @@ A collection of dictionary helper functions for common dict manipulation tasks.
 The `dict_utils` module is part of this project. Import as:
 
 ```python
-from dict_utils import deep_merge, flatten_keys, unflatten_keys, invert, filter_keys, omit_keys, map_values, map_keys, get_nested, set_nested
+from utils import deep_merge, flatten_keys, unflatten_keys, invert, filter_keys, omit_keys, map_values, map_keys, get_nested, set_nested
 ```
+
+## CLI
+
+Dict utils are used internally; use the Python API for dict operations.
 
 ## Functions
 

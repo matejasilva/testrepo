@@ -16,8 +16,16 @@ Basic string helper functions.
 ## Example
 
 ```python
-from string_utils import strip_extra_spaces, word_count
+from utils import strip_extra_spaces, word_count
 
 strip_extra_spaces("  hello   world  ")  # -> "hello world"
 word_count("one two three")              # -> 3
+```
+
+## CLI
+
+```bash
+utils string truncate "hello world" 5
+utils string word-count "one two three"
+utils string strip-spaces "  hello   world  "
 ```

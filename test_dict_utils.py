@@ -1,5 +1,5 @@
 import pytest
-from dict_utils import (
+from utils.dict_utils import (
     deep_merge,
     flatten_keys,
     unflatten_keys,

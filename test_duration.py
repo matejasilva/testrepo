@@ -1,5 +1,5 @@
 import pytest
-from duration import parse_duration, format_duration, DurationFormatError
+from utils.duration import parse_duration, format_duration, DurationFormatError
 
 
 @pytest.mark.parametrize("input_str, expected", [

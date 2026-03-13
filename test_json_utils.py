@@ -1,7 +1,7 @@
 import tempfile
 from pathlib import Path
 
-from json_utils import loads_safe, dumps_pretty, load_file, dump_file, get_path
+from utils.json_utils import loads_safe, dumps_pretty, load_file, dump_file, get_path
 
 
 def test_loads_safe():

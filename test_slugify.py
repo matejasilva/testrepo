@@ -1,5 +1,5 @@
 import pytest
-from slugify import slugify, SlugifyError
+from utils.slugify import slugify, SlugifyError
 
 
 @pytest.mark.parametrize("input_text, expected", [

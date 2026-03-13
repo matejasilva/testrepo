@@ -3,5 +3,12 @@
 JSON parsing and serialization: loads_safe, dumps_pretty, load_file, dump_file, get_path.
 
 ```python
-from json_utils import loads_safe, load_file, dump_file, get_path
+from utils import loads_safe, dumps_pretty, load_file, dump_file, get_path
+```
+
+## CLI
+
+```bash
+utils json pretty '{"a": 1}'
+utils json parse '{"a": 1}'
 ```

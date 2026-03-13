@@ -1,4 +1,4 @@
-from text_utils import lines, bullet_list, indent, dedent, width_wrap
+from utils.text_utils import lines, bullet_list, indent, dedent, width_wrap
 
 
 def test_lines():

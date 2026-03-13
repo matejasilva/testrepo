@@ -1,5 +1,5 @@
 import pytest
-from duration import parse_duration, format_duration, DurationFormatError
+from duration import parse_duration, format_duration, add_durations, DurationFormatError
 
 
 @pytest.mark.parametrize("input_str, expected", [
@@ -47,3 +47,19 @@ def test_format_duration_invalid(invalid_seconds):
 def test_round_trip():
     for seconds in [0, 45, 60, 3600, 3661, 86399]:
         assert parse_duration(format_duration(seconds)) == seconds
+
+
+@pytest.mark.parametrize("a, b, expected", [
+    ("1h", "30m", "1h 30m"),
+    ("1h 30m", "45m 15s", "2h 15m 15s"),
+    ("0s", "1h", "1h"),
+    ("30m", "30m", "1h"),
+    ("30s", "30s", "1m"),
+])
+def test_add_durations(a, b, expected):
+    assert add_durations(a, b) == expected
+
+
+def test_add_durations_invalid():
+    with pytest.raises(DurationFormatError):
+        add_durations("1h", "invalid")

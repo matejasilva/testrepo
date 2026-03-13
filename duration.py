@@ -64,3 +64,12 @@ def format_duration(seconds: int) -> str:
             seconds -= value * multiplier
 
     return " ".join(parts)
+
+
+def add_durations(a: str, b: str) -> str:
+    """
+    Add two duration strings and return the result as a formatted duration string.
+    Example: add_durations("1h 30m", "45m 15s") -> "2h 15m 15s"
+    """
+    total_seconds = parse_duration(a) + parse_duration(b)
+    return format_duration(total_seconds)

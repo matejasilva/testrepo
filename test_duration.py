@@ -1,5 +1,11 @@
 import pytest
-from utils.duration import parse_duration, format_duration, add_durations, DurationFormatError
+from utils.duration import (
+    parse_duration,
+    format_duration,
+    add_durations,
+    subtract_durations,
+    DurationFormatError,
+)
 
 
 @pytest.mark.parametrize("input_str, expected", [
@@ -51,9 +57,27 @@ def test_round_trip():
 
 @pytest.mark.parametrize("a, b, expected", [
     ("1h 30m", "45m", "2h 15m"),
-    ("30m", "30m", "1h 0m"),
-    ("45s", "15s", "1m 0s"),
-    ("1h", "0s", "1h 0m"),
+    ("30m", "30m", "1h"),
+    ("45s", "15s", "1m"),
+    ("1h", "0s", "1h"),
 ])
 def test_add_durations(a, b, expected):
     assert add_durations(a, b) == expected
+
+
+@pytest.mark.parametrize("a, b, expected", [
+    ("2h 15m", "45m", "1h 30m"),
+    ("1h", "1h", "0s"),
+    ("1h 30m", "30m", "1h"),
+])
+def test_subtract_durations(a, b, expected):
+    assert subtract_durations(a, b) == expected
+
+
+@pytest.mark.parametrize("a, b", [
+    ("30m", "1h"),
+    ("0s", "1m"),
+])
+def test_subtract_durations_negative_raises(a, b):
+    with pytest.raises(DurationFormatError, match="negative"):
+        subtract_durations(a, b)

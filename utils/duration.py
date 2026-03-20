@@ -84,3 +84,14 @@ def add_durations(a: str, b: str) -> str:
     """
     total = parse_duration(a) + parse_duration(b)
     return format_duration(total)
+
+
+def subtract_durations(a: str, b: str) -> str:
+    """
+    Subtract the second duration from the first.
+    Example: subtract_durations("2h 15m", "45m") -> "1h 30m"
+    """
+    diff = parse_duration(a) - parse_duration(b)
+    if diff < 0:
+        raise DurationFormatError("Subtraction would yield a negative duration")
+    return format_duration(diff)

@@ -13,6 +13,7 @@ from . import (
     parse_duration,
     format_duration,
     multiply_duration,
+    compare_durations,
     dumps_pretty,
     loads_safe,
     hex_to_rgb,
@@ -69,6 +70,9 @@ def _cmd_duration(parser):
     p = sub.add_parser("multiply", help="Multiply duration by factor")
     p.add_argument("duration", help='e.g. "1h 30m"')
     p.add_argument("factor", type=float, help="Factor to multiply by")
+    p = sub.add_parser("compare", help="Signed difference in seconds (first minus second)")
+    p.add_argument("a", help='First duration, e.g. "1h"')
+    p.add_argument("b", help='Second duration, e.g. "30m"')
 
 
 def _run_duration(args):
@@ -78,6 +82,8 @@ def _run_duration(args):
         print(format_duration(args.seconds))
     elif args.duration_cmd == "multiply":
         print(multiply_duration(args.duration, args.factor))
+    elif args.duration_cmd == "compare":
+        print(compare_durations(args.a, args.b))
 
 
 def _cmd_json(parser):

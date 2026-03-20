@@ -84,3 +84,11 @@ def add_durations(a: str, b: str) -> str:
     """
     total = parse_duration(a) + parse_duration(b)
     return format_duration(total)
+
+
+def compare_durations(a: str, b: str) -> int:
+    """
+    Signed difference in seconds: first duration minus second.
+    Example: compare_durations("1h", "30m") -> 1800
+    """
+    return parse_duration(a) - parse_duration(b)

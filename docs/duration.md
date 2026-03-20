@@ -5,7 +5,7 @@ Parse and format duration strings (e.g. `1h 30m 15s`).
 ## Usage
 
 ```python
-from utils import parse_duration, format_duration, multiply_duration, add_durations
+from utils import parse_duration, format_duration, multiply_duration, add_durations, compare_durations
 ```
 
 ## Functions
@@ -14,6 +14,7 @@ from utils import parse_duration, format_duration, multiply_duration, add_durati
 - `format_duration(seconds: int) -> str` — Convert seconds to duration string
 - `multiply_duration(duration: str, factor: int | float) -> str` — Multiply duration by factor
 - `add_durations(a: str, b: str) -> str` — Sum two duration strings (e.g. `"1h 30m"` + `"45m"` → `"2h 15m"`)
+- `compare_durations(a: str, b: str) -> int` — Signed difference in seconds (`a` minus `b`)
 
 ## CLI
 
@@ -21,4 +22,5 @@ from utils import parse_duration, format_duration, multiply_duration, add_durati
 utils duration parse "1h 30m"
 utils duration format 5400
 utils duration multiply "1h" 2.5
+utils duration compare "1h" "30m"
 ```

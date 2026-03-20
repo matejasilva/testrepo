@@ -13,6 +13,7 @@ from . import (
     parse_duration,
     format_duration,
     multiply_duration,
+    subtract_durations,
     dumps_pretty,
     loads_safe,
     hex_to_rgb,
@@ -69,6 +70,9 @@ def _cmd_duration(parser):
     p = sub.add_parser("multiply", help="Multiply duration by factor")
     p.add_argument("duration", help='e.g. "1h 30m"')
     p.add_argument("factor", type=float, help="Factor to multiply by")
+    p = sub.add_parser("subtract", help="Subtract second duration from first")
+    p.add_argument("a", help='Minuend, e.g. "2h 15m"')
+    p.add_argument("b", help='Subtrahend, e.g. "45m"')
 
 
 def _run_duration(args):
@@ -78,6 +82,8 @@ def _run_duration(args):
         print(format_duration(args.seconds))
     elif args.duration_cmd == "multiply":
         print(multiply_duration(args.duration, args.factor))
+    elif args.duration_cmd == "subtract":
+        print(subtract_durations(args.a, args.b))
 
 
 def _cmd_json(parser):

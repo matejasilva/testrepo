@@ -1,5 +1,7 @@
 """Utils package - collection of helper modules."""
 
+__version__ = "0.1.0"
+
 # Color utils
 from .color_utils import (
     hex_to_rgb,
@@ -79,6 +81,7 @@ from .duration import (
 from .validation_utils import is_valid_email, is_valid_url, is_valid_phone
 
 __all__ = [
+    "__version__",
     # Color
     "hex_to_rgb",
     "rgb_to_hex",

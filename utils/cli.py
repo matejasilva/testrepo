@@ -6,6 +6,7 @@ import json
 import sys
 
 from . import (
+    __version__,
     truncate,
     is_palindrome,
     word_count,
@@ -202,6 +203,12 @@ def _run_text(args):
 
 def main():
     ap = argparse.ArgumentParser(prog="utils", description="Unified utils CLI")
+    ap.add_argument(
+        "-v",
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+    )
     sub = ap.add_subparsers(dest="module", required=True)
 
     # string

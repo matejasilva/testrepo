@@ -9,6 +9,9 @@ description = "Collection of utility modules: string, dict, json, color, duratio
 readme = "README.md"
 requires-python = ">=3.10"
 
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
 [project.scripts]
 utils = "utils.cli:main"
 

@@ -15,3 +15,6 @@ utils = "utils.cli:main"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["utils*"]
+
+[tool.setuptools.package-data]
+utils = ["py.typed"]

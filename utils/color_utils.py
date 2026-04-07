@@ -5,7 +5,11 @@
 def hex_to_rgb(hex_str: str) -> tuple[int, int, int]:
     """Convert #RRGGBB to (r, g, b)."""
     hex_str = hex_str.lstrip("#")
-    return tuple(int(hex_str[i : i + 2], 16) for i in (0, 2, 4))
+    return (
+        int(hex_str[0:2], 16),
+        int(hex_str[2:4], 16),
+        int(hex_str[4:6], 16),
+    )
 
 
 def rgb_to_hex(r: int, g: int, b: int) -> str:

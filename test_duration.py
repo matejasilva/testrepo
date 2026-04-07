@@ -1,10 +1,11 @@
 import pytest
+
 from utils.duration import (
-    parse_duration,
-    format_duration,
-    add_durations,
-    subtract_durations,
     DurationFormatError,
+    add_durations,
+    format_duration,
+    parse_duration,
+    subtract_durations,
 )
 
 

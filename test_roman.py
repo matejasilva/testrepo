@@ -1,5 +1,6 @@
 import pytest
-from utils.roman import to_roman, from_roman, RomanNumeralError
+
+from utils.roman import RomanNumeralError, from_roman, to_roman
 
 
 @pytest.mark.parametrize("number, roman", [

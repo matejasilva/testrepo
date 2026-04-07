@@ -41,6 +41,10 @@ See [docs/README.md](docs/README.md) for the full module index and links to indi
 
 ## Tests
 
+With dev dependencies (`pip install -e ".[dev]"`):
+
 ```bash
-pytest test_*.py -v
+python -m pytest
+python -m mypy
+python -m ruff check .
 ```

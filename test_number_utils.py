@@ -1,5 +1,6 @@
 import pytest
-from utils.number_utils import clamp, sign, is_even, is_odd, digits
+
+from utils.number_utils import clamp, digits, is_even, is_odd, sign
 
 
 class TestClamp:

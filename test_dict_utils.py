@@ -1,15 +1,14 @@
-import pytest
 from utils.dict_utils import (
     deep_merge,
-    flatten_keys,
-    unflatten_keys,
-    invert,
     filter_keys,
-    omit_keys,
-    map_values,
-    map_keys,
+    flatten_keys,
     get_nested,
+    invert,
+    map_keys,
+    map_values,
+    omit_keys,
     set_nested,
+    unflatten_keys,
 )
 
 

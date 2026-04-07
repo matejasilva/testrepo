@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Dict utilities - a collection of dictionary helper functions."""
 
-from typing import TypeVar, Any, Callable
+from collections.abc import Callable
+from typing import Any, TypeVar
 
 K = TypeVar("K")
 V = TypeVar("V")

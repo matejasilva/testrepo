@@ -1,5 +1,6 @@
 import pytest
-from utils.retry import retry, RetryError
+
+from utils.retry import RetryError, retry
 
 
 def test_success_without_retry():

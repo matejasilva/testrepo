@@ -2,34 +2,33 @@
 """Unified CLI for all utils modules."""
 
 import argparse
-import json
 import sys
 
 from . import (
     __version__,
-    truncate,
-    is_palindrome,
-    word_count,
-    strip_extra_spaces,
-    parse_duration,
-    format_duration,
-    multiply_duration,
-    subtract_durations,
-    dumps_pretty,
-    loads_safe,
-    hex_to_rgb,
-    rgb_to_hex,
-    contrast_color,
-    slugify,
-    to_roman,
-    from_roman,
-    is_valid_email,
-    is_valid_url,
-    is_valid_phone,
-    clamp,
-    is_prime,
-    lines,
     bullet_list,
+    clamp,
+    contrast_color,
+    dumps_pretty,
+    format_duration,
+    from_roman,
+    hex_to_rgb,
+    is_palindrome,
+    is_prime,
+    is_valid_email,
+    is_valid_phone,
+    is_valid_url,
+    lines,
+    loads_safe,
+    multiply_duration,
+    parse_duration,
+    rgb_to_hex,
+    slugify,
+    strip_extra_spaces,
+    subtract_durations,
+    to_roman,
+    truncate,
+    word_count,
 )
 
 

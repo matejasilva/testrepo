@@ -29,5 +29,8 @@ jobs:
       - name: Run mypy
         run: python -m mypy
 
+      - name: Run ruff
+        run: python -m ruff check .
+
       - name: Run tests
         run: python -m pytest

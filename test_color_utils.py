@@ -1,4 +1,10 @@
-from utils.color_utils import hex_to_rgb, rgb_to_hex, rgb_to_grayscale, is_dark, contrast_color
+from utils.color_utils import (
+    contrast_color,
+    hex_to_rgb,
+    is_dark,
+    rgb_to_grayscale,
+    rgb_to_hex,
+)
 
 
 def test_hex_to_rgb():

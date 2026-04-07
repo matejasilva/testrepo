@@ -30,8 +30,8 @@ def dedent(text: str) -> str:
 def width_wrap(text: str, width: int = 80) -> str:
     """Wrap text to width, breaking on word boundaries."""
     words = text.split()
-    lines_list = []
-    current = []
+    lines_list: list[str] = []
+    current: list[str] = []
     current_len = 0
     for w in words:
         need = len(w) + (1 if current else 0)

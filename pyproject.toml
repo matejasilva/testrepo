@@ -12,6 +12,9 @@ requires-python = ">=3.10"
 [project.optional-dependencies]
 dev = ["pytest>=8", "mypy>=1.8"]
 
+[project.urls]
+Documentation = "https://github.com/matejasilva/testrepo/blob/main/docs/README.md"
+
 [project.scripts]
 utils = "utils.cli:main"
 

@@ -41,6 +41,18 @@ See [docs/README.md](docs/README.md) for the full module index and links to indi
 
 ## Tests
 
+Quick run (no coverage report):
+
 ```bash
-pytest test_*.py -v
+pip install -e ".[dev]"
+python -m pytest
 ```
+
+With coverage (same invocation as CI: threshold and missing lines come from `pyproject.toml`):
+
+```bash
+pip install -e ".[dev]"
+python -m pytest --cov=utils --cov-report=term-missing --cov-report=xml --cov-report=html:htmlcov
+```
+
+The terminal summary lists missed lines (`term-missing`). HTML output is written under `htmlcov/` (ignored by git). `coverage.xml` is suitable for external tools.

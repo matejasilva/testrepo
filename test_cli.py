@@ -22,3 +22,9 @@ def test_cli_version_flags(flag):
     proc = _run_cli(flag)
     assert proc.returncode == 0, proc.stderr
     assert proc.stdout.strip() == f"utils {__version__}"
+
+
+def test_cli_duration_add():
+    proc = _run_cli("duration", "add", "1h 30m", "45m")
+    assert proc.returncode == 0, proc.stderr
+    assert proc.stdout.strip() == "2h 15m"

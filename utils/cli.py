@@ -14,6 +14,7 @@ from . import (
     parse_duration,
     format_duration,
     multiply_duration,
+    add_durations,
     subtract_durations,
     dumps_pretty,
     loads_safe,
@@ -71,6 +72,9 @@ def _cmd_duration(parser):
     p = sub.add_parser("multiply", help="Multiply duration by factor")
     p.add_argument("duration", help='e.g. "1h 30m"')
     p.add_argument("factor", type=float, help="Factor to multiply by")
+    p = sub.add_parser("add", help="Add two duration strings")
+    p.add_argument("a", help='First summand, e.g. "1h 30m"')
+    p.add_argument("b", help='Second summand, e.g. "45m"')
     p = sub.add_parser("subtract", help="Subtract second duration from first")
     p.add_argument("a", help='Minuend, e.g. "2h 15m"')
     p.add_argument("b", help='Subtrahend, e.g. "45m"')
@@ -83,6 +87,8 @@ def _run_duration(args):
         print(format_duration(args.seconds))
     elif args.duration_cmd == "multiply":
         print(multiply_duration(args.duration, args.factor))
+    elif args.duration_cmd == "add":
+        print(add_durations(args.a, args.b))
     elif args.duration_cmd == "subtract":
         print(subtract_durations(args.a, args.b))
 

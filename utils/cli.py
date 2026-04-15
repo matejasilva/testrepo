@@ -10,6 +10,8 @@ from . import (
     truncate,
     is_palindrome,
     word_count,
+    reverse_words,
+    capitalize_words,
     strip_extra_spaces,
     parse_duration,
     format_duration,
@@ -49,6 +51,12 @@ def _cmd_string(parser):
     # strip-spaces
     p = sub.add_parser("strip-spaces", help="Collapse extra whitespace")
     p.add_argument("text", help="Text to process")
+    # reverse-words
+    p = sub.add_parser("reverse-words", help="Reverse order of whitespace-separated words")
+    p.add_argument("text", help="Text to process")
+    # capitalize-words
+    p = sub.add_parser("capitalize-words", help="Capitalize first letter of each word")
+    p.add_argument("text", help="Text to process")
 
 
 def _run_string(args):
@@ -60,6 +68,10 @@ def _run_string(args):
         print(word_count(args.text))
     elif args.string_cmd == "strip-spaces":
         print(strip_extra_spaces(args.text))
+    elif args.string_cmd == "reverse-words":
+        print(reverse_words(args.text))
+    elif args.string_cmd == "capitalize-words":
+        print(capitalize_words(args.text))
 
 
 def _cmd_duration(parser):

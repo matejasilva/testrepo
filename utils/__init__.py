@@ -81,6 +81,36 @@ from .duration import (
 # Validation utils
 from .validation_utils import is_valid_email, is_valid_url, is_valid_phone
 
+# Iterator / sequence utils
+from .iter_utils import (
+    batched,
+    chunk,
+    concat,
+    cons,
+    drop,
+    drop_while,
+    duplicates,
+    duplicates_all,
+    enumerate_from,
+    first,
+    flatten,
+    flatten_depth,
+    group_consecutive,
+    interleave,
+    last,
+    nth,
+    pad_none,
+    pairwise,
+    partition,
+    run_length_encode,
+    scan,
+    sliding_window,
+    spy,
+    take,
+    take_while,
+    unique_ordered,
+)
+
 __all__ = [
     "__version__",
     # Color
@@ -148,4 +178,31 @@ __all__ = [
     "is_valid_email",
     "is_valid_url",
     "is_valid_phone",
+    # Iterator / sequence
+    "batched",
+    "chunk",
+    "concat",
+    "cons",
+    "drop",
+    "drop_while",
+    "duplicates",
+    "duplicates_all",
+    "enumerate_from",
+    "first",
+    "flatten",
+    "flatten_depth",
+    "group_consecutive",
+    "interleave",
+    "last",
+    "nth",
+    "pad_none",
+    "pairwise",
+    "partition",
+    "run_length_encode",
+    "scan",
+    "sliding_window",
+    "spy",
+    "take",
+    "take_while",
+    "unique_ordered",
 ]

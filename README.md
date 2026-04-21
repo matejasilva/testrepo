@@ -41,6 +41,15 @@ See [docs/README.md](docs/README.md) for the full module index and links to indi
 
 ## Tests
 
+Install dev dependencies so the same tools CI uses are available locally:
+
 ```bash
-pytest test_*.py -v
+pip install -e ".[dev]"
+python -m pytest
+```
+
+Static type checking (configuration lives in `pyproject.toml` under `[tool.mypy]`):
+
+```bash
+python -m mypy
 ```

@@ -1,5 +1,9 @@
+"""Retry decorator for transient failures."""
+
 import time
 from functools import wraps
+
+__all__ = ["RetryError", "retry"]
 
 
 class RetryError(Exception):

@@ -1,3 +1,5 @@
+"""Tests for duration parsing, formatting, and arithmetic helpers."""
+
 import pytest
 from utils.duration import (
     parse_duration,

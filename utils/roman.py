@@ -1,3 +1,8 @@
+"""Roman numeral conversion (integers 1–3999)."""
+
+__all__ = ["RomanNumeralError", "to_roman", "from_roman"]
+
+
 class RomanNumeralError(ValueError):
     pass
 

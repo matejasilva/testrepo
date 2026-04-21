@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 from utils.math_utils import is_prime
 

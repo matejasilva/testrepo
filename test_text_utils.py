@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from utils.text_utils import lines, bullet_list, indent, dedent, width_wrap
 
 

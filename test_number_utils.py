@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 from utils.number_utils import clamp, sign, is_even, is_odd, digits
 

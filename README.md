@@ -24,6 +24,8 @@ After install:
 ```bash
 utils --help
 utils string truncate "hello world" 5
+utils string palindrome "racecar"
+utils string word-count "one two three"
 utils duration parse "1h 30m"
 utils json pretty '{"a":1}'
 utils validation email user@example.com

@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """Color utilities - color conversion and formatting helpers."""
 
+__all__ = [
+    "hex_to_rgb",
+    "rgb_to_hex",
+    "rgb_to_grayscale",
+    "is_dark",
+    "contrast_color",
+]
+
 
 def hex_to_rgb(hex_str: str) -> tuple[int, int, int]:
     """Convert #RRGGBB to (r, g, b)."""

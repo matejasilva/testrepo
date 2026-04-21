@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Number utilities - a collection of numeric helper functions."""
 
+__all__ = ["clamp", "sign", "is_even", "is_odd", "digits"]
+
 
 def clamp(n: float, low: float, high: float) -> float:
     """Clamp n to the range [low, high]."""

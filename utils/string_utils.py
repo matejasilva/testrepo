@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 """String utilities - basic string helper functions."""
 
+__all__ = [
+    "truncate",
+    "is_palindrome",
+    "word_count",
+    "reverse_words",
+    "capitalize_words",
+    "strip_extra_spaces",
+]
+
 
 def truncate(s: str, max_len: int, suffix: str = "...") -> str:
     """Truncate s to max_len, appending suffix if truncated."""

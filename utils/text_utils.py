@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Text utilities - text processing helpers."""
 
+__all__ = ["lines", "bullet_list", "indent", "dedent", "width_wrap"]
+
 
 def lines(text: str) -> list[str]:
     """Split text into lines, strip whitespace, skip empty."""

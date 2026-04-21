@@ -3,6 +3,8 @@
 
 import re
 
+__all__ = ["is_valid_email", "is_valid_url", "is_valid_phone"]
+
 
 def is_valid_email(s: str) -> bool:
     """

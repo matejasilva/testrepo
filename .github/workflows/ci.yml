@@ -29,5 +29,9 @@ jobs:
       - name: Run mypy
         run: python -m mypy
 
-      - name: Run tests
-        run: python -m pytest
+      - name: Run tests with coverage
+        run: |
+          python -m pytest \
+            --cov=utils \
+            --cov-report=term-missing \
+            --cov-report=xml

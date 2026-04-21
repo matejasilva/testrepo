@@ -1,3 +1,15 @@
+"""Parse and format duration strings (hours, minutes, seconds)."""
+
+__all__ = [
+    "DurationFormatError",
+    "parse_duration",
+    "format_duration",
+    "multiply_duration",
+    "add_durations",
+    "subtract_durations",
+]
+
+
 class DurationFormatError(ValueError):
     pass
 

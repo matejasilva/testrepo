@@ -1,3 +1,5 @@
+"""Tiny interactive script: print integers 1..n."""
+
 try:
     n = int(input("Enter n: "))
     

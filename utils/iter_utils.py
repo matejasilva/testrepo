@@ -10,6 +10,35 @@ from typing import Any, TypeVar
 T = TypeVar("T")
 U = TypeVar("U")
 
+__all__ = [
+    "batched",
+    "chunk",
+    "concat",
+    "cons",
+    "drop",
+    "drop_while",
+    "duplicates",
+    "duplicates_all",
+    "enumerate_from",
+    "first",
+    "flatten",
+    "flatten_depth",
+    "group_consecutive",
+    "interleave",
+    "last",
+    "nth",
+    "pad_none",
+    "pairwise",
+    "partition",
+    "run_length_encode",
+    "scan",
+    "sliding_window",
+    "spy",
+    "take",
+    "take_while",
+    "unique_ordered",
+]
+
 
 def chunk(iterable: Iterable[T], size: int) -> Iterator[list[T]]:
     """Yield lists of up to ``size`` items from *iterable*.

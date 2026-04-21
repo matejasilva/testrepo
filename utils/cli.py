@@ -34,6 +34,8 @@ from . import (
     bullet_list,
 )
 
+CLI_PROG = "utils"
+
 
 def _cmd_string(parser):
     sub = parser.add_subparsers(dest="string_cmd", required=True)
@@ -214,7 +216,7 @@ def _run_text(args):
 
 
 def main():
-    ap = argparse.ArgumentParser(prog="utils", description="Unified utils CLI")
+    ap = argparse.ArgumentParser(prog=CLI_PROG, description="Unified utils CLI")
     ap.add_argument(
         "-v",
         "--version",

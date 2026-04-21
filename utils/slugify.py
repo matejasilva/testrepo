@@ -1,5 +1,9 @@
+"""URL-friendly slug generation from arbitrary text."""
+
 import re
 import unicodedata
+
+__all__ = ["SlugifyError", "slugify"]
 
 
 class SlugifyError(ValueError):

@@ -22,3 +22,15 @@ def test_cli_version_flags(flag):
     proc = _run_cli(flag)
     assert proc.returncode == 0, proc.stderr
     assert proc.stdout.strip() == f"utils {__version__}"
+
+
+def test_cli_string_reverse_words():
+    proc = _run_cli("string", "reverse-words", "hello world")
+    assert proc.returncode == 0, proc.stderr
+    assert proc.stdout.strip() == "world hello"
+
+
+def test_cli_string_capitalize_words():
+    proc = _run_cli("string", "capitalize-words", "hello world")
+    assert proc.returncode == 0, proc.stderr
+    assert proc.stdout.strip() == "Hello World"

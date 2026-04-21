@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 from utils.dict_utils import (
     deep_merge,

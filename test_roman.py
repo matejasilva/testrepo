@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 from utils.roman import to_roman, from_roman, RomanNumeralError
 

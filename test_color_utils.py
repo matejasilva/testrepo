@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from utils.color_utils import hex_to_rgb, rgb_to_hex, rgb_to_grayscale, is_dark, contrast_color
 
 

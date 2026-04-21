@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 from utils.validation_utils import is_valid_email, is_valid_url, is_valid_phone
 
